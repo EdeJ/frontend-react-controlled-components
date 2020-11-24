@@ -5,7 +5,9 @@ function App() {
 
   const [formValues, setFormValues] = useState({
     name: '',
-    age: 0
+    age: 0,
+    source: 'google',
+    comments: ''
   });
 
   function onChangeHandler(event) {
@@ -23,7 +25,10 @@ function App() {
 
   return (
     <div>
-      <form onSubmit={onSubmitHandler} >
+      <form
+        onSubmit={onSubmitHandler}
+        onChange={onChangeHandler}
+      >
         <fieldset>
           <legend>Gegevens</legend>
           <label>Naam:
@@ -31,7 +36,6 @@ function App() {
               name="name"
               type="text"
               value={formValues.name}
-              onChange={onChangeHandler}
             />
           </label>
           <label>Leeftijd:
@@ -39,7 +43,6 @@ function App() {
               name="age"
               type="text"
               value={formValues.age}
-              onChange={onChangeHandler}
             />
           </label>
         </fieldset>
@@ -49,7 +52,6 @@ function App() {
             <select
               name="source"
               value={formValues.source}
-              onChange={onChangeHandler}
             >
               <option value="google">Google</option>
               <option value="friend">vriend</option>
@@ -61,7 +63,6 @@ function App() {
             <textarea
               name="comments"
               value={formValues.comments}
-              onChange={onChangeHandler}
             />
           </label>
         </fieldset>
