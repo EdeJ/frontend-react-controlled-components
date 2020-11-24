@@ -1,1 +1,10 @@
-/*Schrijf hier jouw css voor jouw formulier*/
+form,
+input,
+select,
+textarea {
+    display: block;
+}
+
+input {
+    box-sizing: border-box;
+}
